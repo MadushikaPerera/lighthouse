@@ -1,11 +1,11 @@
 import React from 'react';
-import {emojify} from 'react-emojione';
+import Emojify from 'react-emojione';
 import { Comment, Icon } from 'semantic-ui-react';
 
 const ChatMessageComponent = () => (
   <Comment.Group>
     <Comment>
-      <Comment.Avatar as='a' src='/assets/images/avatar/small/'+{this.props.username}+'.jpg' />
+      <Comment.Avatar as='a' src='.jpg' />
       <Comment.Content>
         <Comment.Author>{this.props.username}</Comment.Author>
         <Comment.Metadata>

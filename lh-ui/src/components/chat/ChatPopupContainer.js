@@ -22,7 +22,7 @@ class ChatPopupContainer extends Component{
 
     render(){
       return(
-
+        <div>ChatPopupContainer</div>
       );
     }
 
