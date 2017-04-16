@@ -1,0 +1,18 @@
+{
+  "name": "lh-gateway",
+  "version": "0.1.0",
+  "description": "API gateway for Lighthouse",
+  "main": "index.js",
+  "author": "rajikaimal",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "passport": "^0.3.2",
+    "passport-jwt": "^2.2.1",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "prettier": "^1.1.0"
+  }
+}
