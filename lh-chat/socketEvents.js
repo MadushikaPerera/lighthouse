@@ -2,8 +2,8 @@ exports = module.exports = function(io, sockets, onlineUsers) {
 
     io.on('connection', (socket) => {
 
-        // 用户上线
-        socket.on('online', function(data) {
+        // Event for user connecting to socket
+        socket.on('online', (data) => {
             socket.name = data.username;
             onlineUsers.push(data);
             sockets[data.username] = socket;
@@ -13,7 +13,7 @@ exports = module.exports = function(io, sockets, onlineUsers) {
         });
 
 
-        // 加入群组
+        // Event for user joining a group
         socket.on('join group', (data) => {
             var name = data.name;
             socket.join(name);
@@ -22,7 +22,7 @@ exports = module.exports = function(io, sockets, onlineUsers) {
         });
 
 
-        // 离开群组
+        // Event for user leaving a group
         socket.on('leave group', (data) => {
             var name = data.name;
             socket.broadcast.to(name).emit('leave group', { username: socket.name });
@@ -31,14 +31,14 @@ exports = module.exports = function(io, sockets, onlineUsers) {
         });
 
 
-        // 创建群组
+        // Event for user adding new group
         socket.on('new group', (data) => {
             socket.broadcast.emit('new group', data);
             console.log('new group');
         });
 
 
-        // 发送信息
+        // Event for user sending new message
         socket.on('new message', (data) => {
             if (!data.private) {
                 socket.broadcast.to(data.target).emit('new message', data);
@@ -51,7 +51,7 @@ exports = module.exports = function(io, sockets, onlineUsers) {
         });
 
 
-        // 用户下线
+        // Event for user going ofline
         socket.on('offline', () => {
             for (var i = 0, len = onlineUsers.length; i < len; i++) {
                 if (onlineUsers[i] && onlineUsers[i].username === socket.name) {
@@ -66,7 +66,7 @@ exports = module.exports = function(io, sockets, onlineUsers) {
         });
 
 
-        // 用户断开连接
+        // Event for user disconnecting
         socket.on('disconnect', () => {
             for (var i = 0, len = onlineUsers.length; i < len; i++) {
                 if (onlineUsers[i] && onlineUsers[i].username === socket.name) {
