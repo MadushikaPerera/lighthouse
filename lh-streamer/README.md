@@ -12,11 +12,9 @@ git checkout mcu
 ### Installation
 ```
 yarn install
-
 ```
 
 ### Run
 ```
 bash ./start.sh
-
 ```
