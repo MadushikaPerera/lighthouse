@@ -5,7 +5,12 @@ import Navigation from "./components/Navigation";
 import Activity from "./components/Activity";
 import Login from "./components/Login";
 import logo from "./logo.svg";
-import "./App.css";
+import "./Signup.css";
+
+import StepZilla from "react-stepzilla";
+import Step1 from "./components/signup/step1";
+import Step2 from "./components/signup/step2";
+import Step3 from "./components/signup/step3";
 
 class App extends Component {
   state = { activeItem: "inbox" };
@@ -20,6 +25,20 @@ class App extends Component {
 
   render() {
     const { activeItem } = this.state;
+    const steps = [
+      {
+        name: "Organization details",
+        component: <Step1 />
+      },
+      {
+        name: "Administrator",
+        component: <Step2 />
+      },
+      {
+        name: "Biometric Authentication",
+        component: <Step3 />
+      }
+    ];
 
     return (
       <Router>
@@ -62,6 +81,9 @@ class App extends Component {
               </Grid.Column>
               <Grid.Column width={10}>
                 <Route path="/login" component={Login} />
+                <div className="step-progress">
+                  <StepZilla steps={steps} showSteps={true} />
+                </div>
               </Grid.Column>
               <Grid.Column width={3}>
                 <Activity />
