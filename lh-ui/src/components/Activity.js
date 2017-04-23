@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Image, Input, Label, Menu, Card, Feed } from "semantic-ui-react";
+import { Card, Feed } from "semantic-ui-react";
 
 const Activity = () => (
 	<div>

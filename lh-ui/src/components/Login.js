@@ -1,6 +1,6 @@
 import React from "react";
-import { Button, Checkbox, Form } from "semantic-ui-react";
-import { Grid, Segment } from "semantic-ui-react";
+import { Button, Form } from "semantic-ui-react";
+import { Grid } from "semantic-ui-react";
 
 const Login = () => (
   <div>
