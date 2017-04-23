@@ -1,12 +1,11 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { Grid, Image, Input, Label, Menu, Card, Feed } from "semantic-ui-react";
-import Navigation from "./Navigation";
-import Chat from './components/chat/ChatPopupContainer';
-import Activity from './Activity';
-import Login from "./Login";
-import logo from "./logo.svg";
-import "./App.css";
+import Navigation from "./components/Navigation";
+import Activity from "./components/Activity";
+import Login from "./components/Login";
+
+
 
 class App extends Component {
   state = { activeItem: "inbox" };
