@@ -13,5 +13,8 @@
     "socket.io"
   ],
   "author": "Tharaka Romesh",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "config": "^1.25.1"
+  }
 }

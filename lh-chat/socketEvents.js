@@ -8,7 +8,7 @@ exports = module.exports = function(io, sockets, onlineUsers) {
             onlineUsers.push(data);
             sockets[data.username] = socket;
             socket.join('Group');
-            io.emit('online', data);
+            socket.emit('online', data);
             console.log('online');
         });
 

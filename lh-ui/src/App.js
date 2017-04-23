@@ -4,8 +4,8 @@ import { Grid, Image, Input, Label, Menu, Card, Feed } from "semantic-ui-react";
 import Navigation from "./components/Navigation";
 import Activity from "./components/Activity";
 import Login from "./components/Login";
-import logo from "./logo.svg";
-import "./App.css";
+
+
 
 class App extends Component {
   state = { activeItem: "inbox" };
