@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { Menu, Segment } from "semantic-ui-react";
+import { Menu } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+
 
 export default class Navigation extends Component {
 	state = { activeItem: "Live sessions" };
@@ -27,6 +28,13 @@ export default class Navigation extends Component {
 					active={activeItem === "Offline"}
 					onClick={this.handleItemClick}
 				/>
+			<Link to="/code">
+				<Menu.Item
+					name="Code Editor"
+					active={activeItem === "Code Editor"}
+					onClick={this.handleItemClick}
+				/>
+			</Link>
 				<Menu.Menu position="right">
 					<Link to="/login">
 						<Menu.Item

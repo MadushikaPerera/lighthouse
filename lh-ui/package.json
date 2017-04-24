@@ -3,8 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "brace": "^0.10.0",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
+    "react-ace": "^4.2.1",
     "react-dom": "^15.5.4",
     "react-emojione": "^3.1.7",
     "react-redux": "^5.0.4",
