@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import brace from 'brace';
 import AceEditor from 'react-ace';
 import io from 'socket.io-client';
-import { Dropdown, Menu } from 'semantic-ui-react'
+import { Dropdown, Menu } from 'semantic-ui-react';
+let socket = io('http://localhost:8081');
 
 
 import 'brace/mode/java';
@@ -65,13 +66,25 @@ class ceditorContainer extends Component {
            mode:'javascript',
            theme:'github',
            fontSize:18,
-           tabSize:2
+           tabSize:2,
+           code:{},
+           user:''
         };
       }
 
 
+      componentDidMount() {
+        socket.on('recive', data => {
+          console.log(data);
+          if(!this.state.user=='lecturer'){
+            this.setState({code:{data}});
+          }
+        })
+      }
+
       onChange =(newValue)=>{
        console.log('change',newValue);
+       socket.emit('send',{code:this.state.code});
       }
 
       SetTheme=(e, {value})=>{
@@ -104,6 +117,7 @@ class ceditorContainer extends Component {
               name="root"
               fontSize={this.state.fontSize}
               editorProps={{$blockScrolling: true}}
+              highlightActiveLine={true}
               setOptions={{
                 enableBasicAutocompletion: true,
                 enableLiveAutocompletion: true,
