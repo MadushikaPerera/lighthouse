@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import brace from 'brace';
 import AceEditor from 'react-ace';
 import io from 'socket.io-client';
-import { Dropdown, Menu } from 'semantic-ui-react';
+import { Dropdown, Menu,Input,Button } from 'semantic-ui-react';
 let socket = io('http://localhost:8081');
 
 
@@ -74,7 +74,7 @@ class ceditorContainer extends Component {
 
 
       componentDidMount() {
-        socket.on('recive', data => {
+        socket.on('recivecode', data => {
           console.log(data);
           if(!this.state.user=='lecturer'){
             this.setState({code:{data}});
@@ -84,7 +84,7 @@ class ceditorContainer extends Component {
 
       onChange =(newValue)=>{
        console.log('change',newValue);
-       socket.emit('send',{code:this.state.code});
+       socket.emit('sendcode',{code:this.state.code});
       }
 
       SetTheme=(e, {value})=>{
@@ -99,10 +99,23 @@ class ceditorContainer extends Component {
         this.setState({fontSize:value});
       }
 
+      AddUser=()=>{
+        console.log(this.textInput.value);
+        this.setState({user:this.textInput.value});
+      }
+
       render() {
         return (
           <div>
             <Menu compact>
+              {!this.state.user?
+              <div>
+              <Input>
+              <input ref={(input) => { this.textInput = input; }} />
+              </Input>
+              </div>:<div></div>
+              }
+              <Button primary onClick={this.AddUser}>User</Button>
               <Dropdown text='Theme' options={themeoptions} simple item
                 onChange={this.SetTheme}/>
               <Dropdown text='Mode' options={modeoptions} simple item
@@ -117,7 +130,7 @@ class ceditorContainer extends Component {
               name="root"
               fontSize={this.state.fontSize}
               editorProps={{$blockScrolling: true}}
-              highlightActiveLine={true}
+              focus={true}
               setOptions={{
                 enableBasicAutocompletion: true,
                 enableLiveAutocompletion: true,
