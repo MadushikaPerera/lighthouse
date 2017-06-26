@@ -5,6 +5,7 @@ import Navigation from "./components/Navigation";
 import Activity from "./components/Activity";
 import Login from "./components/Login";
 import Ceditor from "./components/ceditor/ceditorContainer";
+import Chat from "./components/chat/ChatPopupContainer";
 
 
 class App extends Component {
@@ -63,6 +64,7 @@ class App extends Component {
               <Grid.Column width={10}>
                 <Route path="/login" component={Login} />
                 <Route path="/code" component={Ceditor} />
+                <Route path="/chat" component={Chat} />
               </Grid.Column>
               <Grid.Column width={3}>
                 <Activity />

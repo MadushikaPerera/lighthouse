@@ -35,6 +35,13 @@ export default class Navigation extends Component {
 					onClick={this.handleItemClick}
 				/>
 			</Link>
+			<Link to="/chat">
+				<Menu.Item
+					name="Chat"
+					active={activeItem === "Chat"}
+					onClick={this.handleItemClick}
+				/>
+			</Link>
 				<Menu.Menu position="right">
 					<Link to="/login">
 						<Menu.Item
