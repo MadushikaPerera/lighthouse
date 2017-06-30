@@ -3285,6 +3285,12 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
+literallycanvas@^0.4.14:
+  version "0.4.14"
+  resolved "https://registry.yarnpkg.com/literallycanvas/-/literallycanvas-0.4.14.tgz#ab44cd0a64bbff07dff2d7a3ded3c5c38506d341"
+  dependencies:
+    react-addons-pure-render-mixin "^0.14.6"
+
 load-json-file@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-1.1.0.tgz#956905708d58b4bab4c2261b04f59f31c99374c0"
@@ -4370,6 +4376,10 @@ react-ace@^4.2.1:
     brace "^0.9.1"
     lodash.isequal "^4.1.1"
     prop-types "^15.5.8"
+
+react-addons-pure-render-mixin@^0.14.6:
+  version "0.14.8"
+  resolved "https://registry.yarnpkg.com/react-addons-pure-render-mixin/-/react-addons-pure-render-mixin-0.14.8.tgz#4109af2d6ceb72e3897bf343d8ae7f329a6713d4"
 
 react-dev-utils@^0.5.2:
   version "0.5.2"

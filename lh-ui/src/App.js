@@ -7,6 +7,7 @@ import Login from "./components/Login";
 import Ceditor from "./components/ceditor/ceditorContainer";
 import Chat from "./components/chat/ChatPopupContainer";
 import VideoEditorContainer from "./components/videoeditor/videoEditorContainer";
+import WhiteboardContainer from "./components/whiteboard/whiteboardContainer";
 
 class App extends Component {
   state = { activeItem: "inbox" };
@@ -66,6 +67,7 @@ class App extends Component {
                 <Route path="/code" component={Ceditor} />
                 <Route path="/chat" component={Chat} />
                 <Route path="/videoeditor" component={VideoEditorContainer} />
+                <Route path="/whiteboard" component={WhiteboardContainer} />
               </Grid.Column>
               <Grid.Column width={3}>
                 <Activity />

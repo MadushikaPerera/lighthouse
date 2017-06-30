@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "fastclick": "^1.0.6"
+    "fastclick": "^1.0.6",
+    "semantic-ui-react": "^0.70.0"
   }
 }

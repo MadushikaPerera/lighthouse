@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "brace": "^0.10.0",
+    "literallycanvas": "^0.4.14",
     "prop-types": "^15.5.8",
     "react": "^15.5.4",
     "react-ace": "^4.2.1",
