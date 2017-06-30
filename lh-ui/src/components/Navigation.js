@@ -42,6 +42,13 @@ export default class Navigation extends Component {
 					onClick={this.handleItemClick}
 				/>
 			</Link>
+			<Link to="/videoeditor">
+				<Menu.Item
+					name="Video Editor"
+					active={activeItem === "Video Editor"}
+					onClick={this.handleItemClick}
+				/>
+			</Link>
 				<Menu.Menu position="right">
 					<Link to="/login">
 						<Menu.Item
